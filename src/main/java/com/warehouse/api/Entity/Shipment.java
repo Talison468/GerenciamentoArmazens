@@ -16,8 +16,13 @@ public class Shipment {
     @Column(nullable = false)
     private String status;
 
-    @ManyToMany(mappedBy = "products")
-    private Set<Shipment> shipments = new HashSet<>();
+    @ManyToMany
+    @JoinTable(
+            name = "shipment_products",
+            joinColumns = @JoinColumn(name = "shipment_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id")
+    )
+    private Set<Product> products = new HashSet<>();
 
     public Shipment() {}
 

@@ -2,6 +2,7 @@ package com.warehouse.api.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -19,7 +20,7 @@ public class Warehouse {
     private Address address;
 
     @OneToMany(mappedBy = "warehouse")
-    private Section section;
+    private Set<Section> section;
 
     public Warehouse() {}
 
@@ -51,5 +52,13 @@ public class Warehouse {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Set<Section> getSection() {
+        return section;
+    }
+
+    public void setSection(Set<Section> section) {
+        this.section = section;
     }
 }
