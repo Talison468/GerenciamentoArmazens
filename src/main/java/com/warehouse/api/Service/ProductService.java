@@ -46,7 +46,7 @@ public class ProductService {
         productCreateDTO.setSku(product.getSku());
         return productCreateDTO;
     }
-    public Product convertToEntity (ProductCreateDTO SectionCreateDTO) {
+    public Product convertToEntity (ProductCreateDTO ProductCreateDTO) {
         Product product = new Product();
         product.setName(product.getName());
         product.setSku(product.getSku());
